@@ -1,0 +1,25 @@
+<ion-item  class="clickable"   detail (click)="onWorkerDetails(worker)" *ngIf="mode==='active' && worker.status==='active'">
+ <div>
+   <ion-label>
+    <h1 class="bold">{{worker.name}}</h1>
+    <p>{{worker.adress}}</p>
+  </ion-label>
+ </div>
+  <div slot="end">
+  <ion-label color="primary">{{worker.phone}}</ion-label>
+  </div>
+</ion-item>
+<ion-item *ngIf="mode==='waiting' && worker.status==='waiting'"  class="clickable"  detail >
+<div  (click)="onWorkerDetails(worker)">
+  <ion-label slot="start">
+    <h2>{{worker.name}}</h2>
+    <h2><ion-text class="bold" color="primary">{{worker.categorieName}}</ion-text></h2>
+    <h3>{{worker.phone}}</h3>
+    <p>{{worker.adress}}</p>
+  </ion-label>
+</div>
+  <ion-buttons slot="end">
+  <ion-button (click)="onValidateWorker(worker)" color="success" ><ion-icon name="checkmark-circle-outline"></ion-icon></ion-button>
+  <ion-button (click)="onDeleteWorker(worker)" ><ion-icon name="trash" slot="icon-only"></ion-icon></ion-button>
+  </ion-buttons>
+</ion-item>

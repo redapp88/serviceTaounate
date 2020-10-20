@@ -1,0 +1,15 @@
+{
+
+  "rulesDirectory": [
+    "codelyzer"
+  ],
+  "rules": {
+    "no-unused-variable": true,
+    "no-unused-expression":true ,
+    "no-duplicate-imports":true ,
+    "no-duplicate-variable": true,
+    "no-unsafe-any": true,
+    "no-require-imports": true,
+    "no-reference-import": true
+  }
+}

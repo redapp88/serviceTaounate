@@ -1,0 +1,8 @@
+{
+  "name": "taounateService",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

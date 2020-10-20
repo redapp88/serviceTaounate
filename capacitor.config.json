@@ -1,0 +1,7 @@
+{
+  "appId": "com.redapp.taounateServices",
+  "appName": "taounateServices",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

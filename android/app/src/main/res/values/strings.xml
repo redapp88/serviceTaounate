@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Taounate Services</string>
+    <string name="title_activity_main">Taounate Services</string>
+    <string name="package_name">com.redApp.taounateServices</string>
+    <string name="fileprovider_authority">com.redApp.taounateServices.fileprovider</string>
+    <string name="custom_url_scheme">com.redApp.taounateServices</string>
+</resources>

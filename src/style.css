@@ -1,0 +1,10 @@
+.clickable{
+    cursor: pointer;
+}
+.bold{
+    font-weight: bold;
+}
+.error-message{
+    color:red;
+    font-size:small;
+}

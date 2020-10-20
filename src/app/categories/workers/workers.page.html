@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/categories"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{isLoading?'chargement':categorieName}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onAddWorker()">
+        <ion-icon  name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3" *ngIf="loadedWorkers.length<=0 && !isLoading" text-center>
+        <p>la liste des {{categorieName}} est vide</p>
+      </ion-col>
+      <ion-col size-sm="6" offset-sm="3" *ngIf="isLoading" text-center>
+        <ion-spinner color="primary" ></ion-spinner>
+      </ion-col>
+      <ion-col size-sm="6" offset-sm="3" text-center *ngIf="!isLoading && loadedWorkers.length>0">
+        <!--if normal user-->
+        <ion-list *ngIf="!isAdmin">
+          <div *ngFor="let worker of loadedWorkers">
+          <app-worker-item *ngIf="worker.status==='active'"  [worker]="worker" mode="active"></app-worker-item>
+          </div>
+        </ion-list>
+
+
+        <ion-list *ngIf="isAdmin">
+          <!--if admin -->
+          <div *ngFor="let worker of loadedWorkers">
+          <ion-item-sliding *ngIf="worker.status==='active'" #slidingItem>
+            <app-worker-item   [worker]="worker" mode="active"></app-worker-item>
+            <ion-item-options>
+              <ion-item-option color="danger" (click)="onDelete(worker,slidingItem)">
+                <ion-icon name="trash" slot="top"></ion-icon>
+                Supprimer
+              </ion-item-option>
+              <ion-item-option color="warning" (click)="onEdit(worker,slidingItem)">
+                <ion-icon name="create" slot="top"></ion-icon>
+                Editer
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+          </div>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start">{{workerName}}</ion-title>
+    <ion-buttons slot="end">
+
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label >Categorie:</ion-label>
+            <ion-label class="bold" >{{workerCat}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label >Nom:</ion-label>
+            <ion-label class="bold">{{workerName}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row >
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label >Description</ion-label>
+            <ion-label >{{workerDesc}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row >
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label >Adresse</ion-label>
+            <ion-label>{{workerAdress}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row >
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label>Telephone</ion-label>
+            <ion-label class="bold" >{{workerphone}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row >
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-label class="bold">{{workerEmail}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
